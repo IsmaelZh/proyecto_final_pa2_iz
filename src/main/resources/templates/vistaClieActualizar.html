@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <link rel="stylesheet" href="static/css/encabezado.css"th:href="@{/css/encabezado.css}">
+
+</head>
+<body>
+	<div class="encabezado-img">
+        <h1>Actualizar</h1>
+    </div>
+    
+    <div th:if="${hay}">
+	    <form th:action="@{/budget/cliente>actualizado/{id}(id=${cliente.id})}" th:object="${cliente}" th:method="put">
+			<h3>Actualice sus Datos:</h3>
+	        <table>	
+	            <tr>
+	                <td><label>Nombre:</label></td>
+	
+	                <td><input type="text" id="nombre" name="nombre" th:field="${cliente.nombre}" required="true"></td>
+	                </td>
+	            </tr>
+	
+	            <tr>
+	                <td><label>Apellido:</label></td>
+	
+	                <td><input type="text" id="apellido" name="apellido" th:field="${cliente.apellido}" required="true"></td>
+	                </td>
+	            </tr>
+	
+	            <tr>
+	                <td><label>Fecha de Nacimiento:</label></td>
+	
+	                <td><input type="datetime-local" id="fechaNacimiento" name="fechaNacimiento" th:field="${cliente.fechaNacimiento}" required="true"></td>
+	                </td>
+	            </tr>
+	
+	            <tr>
+	                <td><label>Genero:</label></td>
+	
+	                <td><input type="text" id="genero" name="genero" th:field="${cliente.genero}"></td>
+	
+	            </tr>
+	
+	        </table>
+	
+	        <div style="text-align: center;">
+	            <td><input type="submit" value="Actualizar" ></td>
+	        </div>
+	    </form>
+	</div>
+	<div th:if="${!hay}">
+		<table>
+			<th>No hay resultados</th>
+		</table>
+	</div>
+	<a class="boton_atras" href="/budget/menu/cliente>actualizar">Atras</a>
+</body>
+</html>

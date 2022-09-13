@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="static/css/ingresos.css" th:href="@{/css/ingresos.css}">
+</head>
+
+<body>
+
+	<div class="encabezado-img">
+		<h1>Actualizar datos del vehiculo</h1>
+	</div>
+
+	<form th:action="@{/budget/actualizarVehiculo/{placa}(placa=${vehiculo.placa})}" th:object="${vehiculo}" th:method="PUT">
+
+		<table>
+
+			<tr>
+				<td><label>Placa:</label></td>
+				<td><input type="text" id="placa" th:field="${vehiculo.placa}"></td>
+			</tr>
+
+			<tr>
+				<td><label>Modelo:</label></td>
+
+				<td><input type="text" id="modelo" th:field="${vehiculo.modelo}"></td>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label>Marca:</label></td>
+
+				<td><input type="text" id="marca" th:field="${vehiculo.marca}"></td>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label>Año de fabricacion:</label></td>
+
+				<td><input type="datetime-local" id="anioFabricacion" th:field="${vehiculo.anioFabricacion}"></td>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label>Pais de fabricacion:</label></td>
+
+				<td><input type="text" id="pais" th:field="${vehiculo.paisFabricacion}"></td>
+
+			</tr>
+
+			<tr>
+				<td><label>Cilindraje:</label></td>
+
+				<td><input type="text" id="cilindraje" th:field="${vehiculo.cilindraje}"></td>
+
+			</tr>
+
+			<tr>
+				<td><label>Avaluo:</label></td>
+
+				<td><input type="text" id="avaluo" th:field="${vehiculo.avaluo}"></td>
+
+			</tr>
+
+			<tr>
+				<td><label>Valor por dia:</label></td>
+
+				<td><input type="text" id="valorDia" th:field="${vehiculo.valorDia}"></td>
+
+			</tr>
+
+		</table>
+
+		<div style="text-align: center;">
+			<td><input type="submit" value="Actualizar"></td>
+		</div>
+
+	</form>
+	<a class="boton_atras" href="/budget/menu">Atras</a>
+</body>
+
+</html>

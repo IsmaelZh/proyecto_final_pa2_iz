@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand';
+}
+
+.encabezado-img{
+    background-image: url(../img/encabe1.png);
+
+    height: 100px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    align-items: left;
+}
+
+
+.boton_atras{
+    text-decoration: none;
+    background-color:rgb(168, 168, 168);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 2px 4px rgb(0, 0, 0 , 0.2);
+    padding: 9px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <link rel="stylesheet" href="static/css/encabezado.css"th:href="@{/css/encabezado.css}">
+
+
+</head>
+<body>
+    <div class="encabezado-img">
+        <h1>Buscar vehículo</h1>
+    </div>
+    <form action="#" th:action="@{/budget/cliente>bus+vehi}" th:method="get">
+        <table>
+            <th>
+                Selecione su Marca y modelo Preferidos
+            </th>
+            <tr>
+                <td>Marca</td>
+                <td>
+                    <select id="marca" name=marca>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Ford">Ford</option>                       
+                        <option value="Nissan">Nissan</option>
+                        
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Modelo</td>
+                <td>
+                    <select id="modelo" name="modelo">
+                        <option value="Sedan">Sedan</option>
+                        <option value="Suv">Suv</option>
+                        <option value="Compacto">Compacto</option>
+                        <option value="Camioneta">Camioneta</option>
+                        <option value="Minivan">Minivan</option>
+                        
+                    </select> 
+
+                </td>
+                
+            </tr>
+            
+        </table>
+        	
+        <div style="text-align: center;">
+        	<td><input type="submit" value="Buscar"></td>
+        </div> 
+    </form>
+
+	<a class= "boton_atras" href="/budget/menu">Atras</a>
+</body>
+</html>

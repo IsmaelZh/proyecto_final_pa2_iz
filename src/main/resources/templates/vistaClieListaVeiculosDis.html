@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Budget</title>
+	<link rel="stylesheet" href="static/css/encabezado.css" th:href="@{/css/encabezado.css}">
+
+</head>
+
+<body>
+	<div class="encabezado-img">
+		<h1>Lista Vehiculos</h1>
+	</div>
+
+
+	<div th:if="${vehiculos!=null} AND ${!vehiculos.isEmpty()}">
+
+		<table class="lista-vehi-dis">
+
+			<tr th:each="vehiculo: ${vehiculos}">
+				<td><b>Placa:</b> -</td>
+				<td th:text="${vehiculo.placa}"></td>
+				<td>- <b>Marca:</b> -</td>
+				<td th:text="${vehiculo.marca}"></td>
+				<td>- <b>Modelo:</b> -</td>
+				<td th:text="${vehiculo.modelo}"></td>
+				<td>- <b>Año:</b> -</td>
+				<td th:text="${vehiculo.anioFabricacion}"></td>
+				<td>- <b>Estado:</b> -</td>
+				<td th:text="${vehiculo.estado}"></td>
+				<td>- <b>Valor c/dia:</b> $</td>
+				<td th:text="${vehiculo.valorDia}"></td>
+			</tr>
+		</table>
+
+		<div class="boton_atras">
+			<h2>Reservar vehículo</h2>
+		</div>
+		<div>
+			<form action="#" th:action="@{/budget/cliente>res+vehi}" method="get">
+				<table>
+					<tr>
+						<td>
+							<label> Placa del vehículo: </label>
+						</td>
+						<td>
+							<input type="text" id="placa" name="placa" required="true">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label> Cedula del cliente: </label>
+						</td>
+						<td>
+							<input type="text" id="cedula" name="cedula" required="true">
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<label> Fecha de reserva: </label>
+						</td>
+						<td>
+							<input type="datetime-local" id="fechaInicio" name="fechaInicio" required="true">
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<label> Fecha de entrega </label>
+						</td>
+						<td>
+							<input type="datetime-local" id="fechaFin" name="fechaFin" required="true">
+						</td>
+					</tr>
+				</table>
+				<div style="text-align: center;">
+					<input type="submit" value="Reservar">
+				</div>
+			</form>
+			
+			
+		</div>
+
+	</div>
+	
+	
+
+	<div th:if="${vehiculos==null} OR ${vehiculos.isEmpty()}">
+		<table>
+			<th>No hay resultados</th>
+		</table>
+	</div>
+
+
+	<a class="boton_atras" href="/budget/menu/cliente>bus+vehi">Atras</a>
+	<a class="boton_atras" href="/budget/menu">Menu</a>
+</body>
+
+</html>

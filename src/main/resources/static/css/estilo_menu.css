@@ -1,0 +1,77 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand';
+}
+header{
+    background-color: #f2f2f2;
+    padding: 25px 0;
+}
+nav{
+    margin: auto;
+    font-size: 20px;
+}
+
+.menu-h{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;  
+}
+
+.menu-h > li >a{
+    display: block;
+    text-decoration: none;
+    padding: 5px 15px;
+    color: #696969;
+}
+
+.menu-h > li :hover{
+    background-color:#93a0b986;
+    color: #fff;
+}
+
+
+.menu-v{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 250px;
+    
+    
+}
+
+.menu-h li:hover .menu-v{
+    display: block;
+}
+.menu-v li:hover{
+    background-color: #000;
+}
+.menu-v li a{
+    display: block;
+    text-decoration: none;
+    color: #f2f2f2;
+    padding: 15px 15px 15px 20px;
+
+
+}
+.encabezado-img{
+    background-image: url(../img/fondo1.jpg);
+    height: 500px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.encabezado-img p{
+    font-size: 20px;
+}
+.encabezado-img h1{
+    font-size: 50px;
+    padding: 20px;
+}

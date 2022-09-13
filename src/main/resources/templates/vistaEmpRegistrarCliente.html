@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="static/css/ingresos.css" th:href="@{/css/ingresos.css}">
+
+</head>
+
+<body>
+
+	<div class="encabezado-img">
+		<h1>Registrar Cliente</h1>
+	</div>
+
+	<form th:action="@{/budget/menu/registrarCliente}" th:object="${cliente}" th:method="POST">
+
+		<table>
+
+			<tr>
+				<td><label>Cedula:</label></td>
+				<td><input type="text" id="cedula" th:field="${cliente.cedula}"></td>
+			</tr>
+
+			<tr>
+				<td><label>Nombre:</label></td>
+
+				<td><input type="text" id="nombre" th:field="${cliente.nombre}"></td>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label>Apellido:</label></td>
+
+				<td><input type="text" id="apellido" th:field="${cliente.apellido}"></td>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label>Fecha de Nacimiento:</label></td>
+
+				<td><input type="datetime-local" id="fechaNacimiento" th:field="${cliente.fechaNacimiento}"></td>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label>Genero:</label></td>
+
+				<td><input type="text" id="genero" th:field="${cliente.genero}"></td>
+
+			</tr>
+			
+			<tr>
+				<td><label>Edad:</label></td>
+
+				<td><input type="text" id="edad" th:field="${cliente.edad}"></td>
+
+			</tr>
+
+		</table>
+
+		<div style="text-align: center;">
+			<td><input type="submit" value="Registrar"></td>
+		</div>
+
+	</form>
+	<a class="boton_atras" href="/budget/menu">Atras</a>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand';
+}
+
+.encabezado-img{
+    background-image: url(../img/encabe1.png);
+    height: 100px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    align-items: left;
+}
+
+table{
+    background-color: #f2f2f2;
+    align-items: center;
+    list-style: none;
+    display: flex;
+    justify-content: space-around; 
+    padding: 25px;
+}
+
+
+.boton_atras{
+    text-decoration: none;
+    background-color:rgb(168, 168, 168);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 2px 4px rgb(0, 0, 0 , 0.2);
+    padding: 9px;
+}
+
+.popup{
+    background-color: #f2f2f2;
+    box-shadow: 0 2px 4px rgb(0, 0, 0 , 0.2);
+    max-width: 100%;
+    padding: 30px 50px;
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    width: 600px;
+
+
+
+}
+
+.texto{
+    padding: 30px;
+}
+
+.texto-g h3{
+    text-align: center;
+
+    
+}
+.texto-g{
+    padding: 30px;
+    text-align:left;
+}
+
+.overlay{
+    background-color: rgb(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

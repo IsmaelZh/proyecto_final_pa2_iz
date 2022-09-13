@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/encabezado.css"th:href="@{/css/encabezado.css}">
+
+</head>
+<body>
+	<div class="encabezado-img">
+        <h1>Retirar vehiculo</h1>
+    </div>
+    <form th:action="@{/budget/empleado>ret+vehi}" th:method="get">
+		<h3>Ingrese el numero de recerva:</h3>
+        <table>
+            <tr>
+                <td><label>Numero de Reserva:</label></td>
+                <td><input type="text" id="numero" name="numero" required="true"></td>
+            </tr>
+        </table>
+
+        <div style="text-align: center;">
+            <td><input type="submit" value="Retirar" ></td>
+        </div>
+    </form>
+    
+        <div th:if="${validarRetirar}">
+        <div class="texto">
+            <div class="overlay">
+                <div class="popup">
+                    <div class ="texto-g">
+                        <h2>Budget:</h2>
+                        <h3>Se retiro el vehiculo con exito</h3>
+                        <p>Gracias</p>
+                    </div>
+                    <a class="boton_atras" href="/budget/menu/">ok</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:if="${!validarRetirar}">
+        <div class="texto">
+            <div class="overlay">
+                <div class="popup">
+                    <div class ="texto-g">
+                        <h2>Budget:</h2>
+                        <h3>No se pudo retirar</h3>
+                        <p>Intente de nuevo...</p>
+                    </div>
+                    <a class="boton_atras" href="/budget/menu/empleado>ret+vehi">ok</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	<a class= "boton_atras" href="/budget/menu">Atras</a>
+</body>
+</html>

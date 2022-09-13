@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <link rel="stylesheet" href="static/css/encabezado.css"th:href="@{/css/encabezado.css}">
+
+</head>
+<body>
+    <div class="encabezado-img">
+        <h1>Registrarse</h1>
+    </div>
+     <form th:action="@{/budget/cliente>registrar+clie}" th:method="get">
+
+        <table>
+
+            <tr>
+                <td><label>Cédula:</label></td>
+                <td><input type="text" id="cedula" name="cedula" required="true"></td>
+            </tr>
+
+            <tr>
+                <td><label>Nombre:</label></td>
+
+                <td><input type="text" id="nombre" name="nombre" required="true"></td>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Apellido:</label></td>
+
+                <td><input type="text" id="apellido" name="apellido" required="true"></td>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Fecha de Nacimiento:</label></td>
+
+                <td><input type="datetime-local" id="fechaNacimiento" name="fechaNacimiento" required="true"></td>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Género:</label></td>
+
+                <td><input type="text" id="genero" name="genero"></td>
+
+            </tr>
+            
+            <tr>
+                <td><label>Edad:</label></td>
+
+                <td><input type="text" id="edad" name="edad"></td>
+
+            </tr>
+
+        </table>
+
+        <div style="text-align: center;">
+            <td><input type="submit" value="Registrar" ></td>
+        </div>
+    </form>
+    
+    
+    <div class="texto" th:if="${hay AND entrada == 2}">
+        <div class="overlay">
+            <div class="popup">
+                <div class ="texto">
+                    <h2>Registro:</h2>
+                    <p>
+                        Usted se ha registrado correctamente
+                    </p> 
+                </div>
+                <a class="boton_atras" href="/budget/menu">ok</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="texto" th:if="${!hay AND entrada == 2}">
+        <div class="overlay">
+            <div class="popup">
+                <div class ="texto">
+                    <h2>Registro:</h2>
+                    <p>
+                        Usted ya se registró anteriormente...
+                    </p> 
+                </div>
+                <a class="boton_atras" href="/budget/menu/cliente>registro">ok</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <a class="boton_atras" href="/budget/menu">Atras</a>
+</body>
+
+</html>
